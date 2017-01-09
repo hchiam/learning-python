@@ -6,5 +6,4 @@ numOfMostCommonLetters = int(raw_input('Enter number of most common characters t
 
 with open(filename,'r') as f:
     data = f.read() # .replace('\n', '').replace(',', '')
-    s = "helloworld"
     print(collections.Counter(data).most_common(numOfMostCommonLetters))
