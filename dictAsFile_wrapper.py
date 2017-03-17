@@ -1,4 +1,4 @@
-# to import this file and use its methods import like this: 
+# to import this file and use its methods, copy this this following line: 
 from dictAsFile_wrapper import * # copy this line to import its methods
 
 
