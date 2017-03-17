@@ -1,3 +1,5 @@
+# basic wrapper around python pickle to use a dictionary as a file
+
 # to import this file and use its methods, copy this this following line: 
 from dictAsFile_wrapper import * # copy this line to import its methods
 
