@@ -1,6 +1,5 @@
 # this .py file runs on python 3
-# using python 2.7?
-# download statsmodels: http://statsmodels.sourceforge.net/devel/install.html
+# using python 2.7? download statsmodels: http://statsmodels.sourceforge.net/devel/install.html
 
 # reference: http://cleverowl.uk/2015/07/01/using-one-way-anova-and-tukeys-test-to-compare-data-sets/
 
