@@ -1,0 +1,23 @@
+Data File: data.txt
+===========================
+One-way ANOVA
+=============
+F-value: 110.917808219
+p-value: 1.82637057922e-05
+CONCLUSION:
+-> Significant DIFFERENCE found!
+Multiple Comparison of Means - Tukey HSD,FWER=0.05
+================================================
+ group1  group2 meandiff  lower    upper  reject
+------------------------------------------------
+ group  group1    -2.5   -10.6645  5.6645 False 
+ group  groupB    40.5   31.2423  49.7577  True 
+group1  groupB    43.0   33.2415  52.7585  True 
+------------------------------------------------
+		meandiff = mean(group2) - mean(group1)
+Unique groups:
+['group ' 'group1 ' 'groupB ']
+Significantly higher:
+group  > groupB 
+group1  > groupB 
+
