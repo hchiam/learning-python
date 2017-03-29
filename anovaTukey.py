@@ -41,7 +41,7 @@ def getFileData(fileName):
     with open(fileName,'r') as f:
         for line in f:
             line = line.replace('\n','')
-            if not line.isdigit():
+            if any(c.isalpha() for c in line): # check if any characters in line are letters
                 currGroup = line + ' ' # account for possibly similar group names
                 groupNames.append(currGroup)
                 print('\ngroup = ' + currGroup)
