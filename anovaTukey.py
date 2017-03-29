@@ -9,7 +9,7 @@
 # for ANOVA
 import numpy as np
 from scipy import stats
-# # for Tukey test
+# for Tukey test
 from statsmodels.stats.multicomp import pairwise_tukeyhsd
 from statsmodels.stats.multicomp import MultiComparison
 # for better terminal/commandline usability
@@ -118,7 +118,7 @@ print(anovaConclusion + '\n')
 # append to output file
 outputFileName = 'output.txt'
 with open(outputFileName,'a') as fl:
-    fl.write('Data File: ' + fileName + '\n===========================\n' + anovaPrintout + anovaConclusion + '\n')
+    fl.write('\nData File: ' + fileName + '\n===========================\n' + anovaPrintout + anovaConclusion + '\n')
 time.sleep(1)
 print('\nANOVA data appended to ' + outputFileName + '\n')
 
