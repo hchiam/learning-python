@@ -14,7 +14,7 @@ def timePerfWrapper(function):
 # this if statement is so that the following code only runs if this .py file is not being imported
 if __name__ == '__main__':
     
-    # # example use:
+    # # example use of this .py file:
     # from timeperfdecorator import timePerfWrapper
     
     @timePerfWrapper
