@@ -135,8 +135,8 @@ if p < 0.05:
     time.sleep(1)
     print('\t\tmeandiff = mean(group2) - mean(group1)')
     time.sleep(1)
-    print('Unique groups:')
-    print(mc.groupsunique)
+    # print('Unique groups:')
+    # print(mc.groupsunique)
     print('\nSignificantly higher:')
     print(checkWhichSigHigher(str(result),groupNames))
     print('\n')
@@ -144,8 +144,8 @@ if p < 0.05:
     with open(outputFileName,'a') as f:
         f.write(str(result)+'\n')
         f.write('\t\tmeandiff = mean(group2) - mean(group1)\n')
-        f.write('Unique groups:\n')
-        f.write(str(mc.groupsunique)+'\n')
+        # f.write('Unique groups:\n')
+        # f.write(str(mc.groupsunique)+'\n')
         f.write('Significantly higher:\n')
         f.write(checkWhichSigHigher(str(result),groupNames) + '\n')
     
