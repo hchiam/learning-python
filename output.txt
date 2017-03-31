@@ -16,8 +16,6 @@ Multiple Comparison of Means - Tukey HSD,FWER=0.05
 group1  groupB    43.0   33.2415  52.7585  True 
 ------------------------------------------------
 		meandiff = mean(group2) - mean(group1)
-Unique groups:
-['group ' 'group1 ' 'groupB ']
 Significantly higher:
 group  > groupB 
 group1  > groupB 
