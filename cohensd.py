@@ -23,6 +23,7 @@ def getCohensD(group1, group2):
     return cohens_d
 
 def evalEffectSize(cohens_d):
+    cohens_d = abs(cohens_d)
     if cohens_d >= 0.8:
         return 'large'
     elif cohens_d >= 0.5:

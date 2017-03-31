@@ -26,14 +26,15 @@ print("Cohen's d effect size for Group 1 vs. Group 2: \n\t" + str(cohens_d))
 print('0.2=small 0.5=medium 0.8=large')
 
 # evaluate effect size:
-def evalEffectSize(effectSize):
-    if effectSize >= 0.8:
+def evalEffectSize(cohens_d):
+    cohens_d = abs(cohens_d)
+    if cohens_d >= 0.8:
         return 'large'
-    elif effectSize >= 0.5:
+    elif cohens_d >= 0.5:
         return 'medium'
-    elif effectSize >= 0.2:
+    elif cohens_d >= 0.2:
         return 'small'
-    elif effectSize < 0.2:
+    elif cohens_d < 0.2:
         return 'very small'
 
 print('Effect size: \n\t' + evalEffectSize(cohens_d))
