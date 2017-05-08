@@ -1,3 +1,4 @@
+# http://stackoverflow.com/questions/2921847/what-does-the-star-operator-mean
 # http://stackoverflow.com/questions/20263839/python-convert-a-string-to-arguments-list
 # http://www.python-course.eu/passing_arguments.php
 def f(a,b):
