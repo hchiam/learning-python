@@ -1,6 +1,3 @@
-# pythonSandbox
-My python sandbox. 
+# Learning Python
 
-Note: Python is "pass by reference".
-Example: a = b; change a also changes b.
-So what: make a copy of variables in Python.
+Miscellaneous practice code in Python and things I've used. 
