@@ -1,3 +1,5 @@
+# adapted from orignal code found in May 2017: https://en.wikipedia.org/wiki/XOR_cipher
+
 from __future__ import print_function, unicode_literals
 from os import urandom
 
