@@ -66,7 +66,7 @@ def check_binary_search_tree_():
     root = a
     # checks = check_gets_smaller(root) and check_gets_bigger(root) and check_order(root)
     checks = check_order(root)
-    print '\nBinary Search Tree? ' + str(checks)
+    print('\nBinary Search Tree? ' + str(checks))
 
 
 # 2
