@@ -13,20 +13,22 @@ def xor_strings_together(string1, string2):
     return bytes(a^b for a,b in zip(string1, string2))
 
 
-message = 'This is the original message.'
-print('\nMESSAGE:', message)
-
-key = generate_key(len(message))
-print('\nKEY:', key)
-
-cipherText = xor_strings_together(message.encode('utf8'), key)
-print ('\nCIPHER TEXT:', cipherText)
-
-decrypted_message = xor_strings_together(cipherText, key).decode('utf8')
-print ('\nDECRYPTED:', decrypted_message)
-
-# verify
-if decrypted_message == message:
-    print('\nUnit test PASSED :)')
-else:
-    print('\nUnit test FAILED :(')
+if __name__ == '__main__': # only run the following code if running this .py file directly
+    message = 'This is the original message.'
+    print('\nMESSAGE:', message)
+    
+    key = generate_key(len(message))
+    print('\nKEY:', key)
+    
+    cipherText = xor_strings_together(message.encode('utf8'), key)
+    print ('\nCIPHER TEXT:', cipherText)
+    
+    decrypted_message = xor_strings_together(cipherText, key).decode('utf8')
+    print ('\nDECRYPTED:', decrypted_message)
+    
+    # verify
+    if decrypted_message == message:
+        print('\nUnit test PASSED :)')
+    else:
+        print('\nUnit test FAILED :(')
+    
