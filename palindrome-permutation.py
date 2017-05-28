@@ -33,6 +33,7 @@ def bits(number):
         bit <<= 1 # so can check next bit
     return output
 
+
 class TestPalPerm(unittest.TestCase):
     def testOneLetter(self):
         self.assertTrue(isPalindromePermutation('a'))
@@ -46,6 +47,7 @@ class TestPalPerm(unittest.TestCase):
         self.assertTrue(isPalindromePermutation('aabbc'))
     def testOneMore(self):
         self.assertTrue(isPalindromePermutation('ababc'))
+
 
 if __name__ == '__main__': # do the following if running this .py file directly:
     suite = unittest.TestLoader().loadTestsFromTestCase(TestPalPerm)
