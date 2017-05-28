@@ -1,3 +1,6 @@
+import unittest
+
+
 def isPalindromePermutation(string):
     # bit vector
     alphaCount = 0
@@ -30,20 +33,20 @@ def bits(number):
         bit <<= 1 # so can check next bit
     return output
 
-def unitTest(passed, string=''):
-    if passed:
-        print('PASSED :) ' + string)
-    else:
-        print('FAILED :( ' + string)
-
+class TestPalPerm(unittest.TestCase):
+    def testOneLetter(self):
+        self.assertTrue(isPalindromePermutation('a'))
+    def testShortExamples(self):
+        self.assertFalse(isPalindromePermutation('ab'))
+        self.assertTrue(isPalindromePermutation('aba'))
+    def testDifferentPermutations(self):
+        self.assertTrue(isPalindromePermutation('abcba'))
+        self.assertTrue(isPalindromePermutation('abcab'))
+        self.assertTrue(isPalindromePermutation('ababc'))
+        self.assertTrue(isPalindromePermutation('aabbc'))
+    def testOneMore(self):
+        self.assertTrue(isPalindromePermutation('ababc'))
 
 if __name__ == '__main__': # do the following if running this .py file directly:
-    print('Unit Tests:')
-    unitTest(isPalindromePermutation('a') == True, "isPalindromePermutation('a') == True")
-    unitTest(isPalindromePermutation('ab') == False, "isPalindromePermutation('ab') == False")
-    unitTest(isPalindromePermutation('aba') == True, string="isPalindromePermutation('aba') == True")
-    unitTest(isPalindromePermutation('abcba') == True, string="isPalindromePermutation('abcba') == True")
-    unitTest(isPalindromePermutation('abcab') == True, string="isPalindromePermutation('abcab') == True")
-    unitTest(isPalindromePermutation('ababc') == True, string="isPalindromePermutation('ababc') == True")
-    unitTest(isPalindromePermutation('aabbc') == True, string="isPalindromePermutation('aabbc') == True")
-    unitTest(isPalindromePermutation('abcbaa') == False, string="isPalindromePermutation('abcbaa') == False")
+    suite = unittest.TestLoader().loadTestsFromTestCase(TestPalPerm)
+    unittest.TextTestRunner(verbosity=2).run(suite)
