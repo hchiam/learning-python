@@ -8,4 +8,4 @@ def create2dDict(n,m):
     return dico
 
 if __name__ == '__main__': # only run the below code if directly running this .py file, not importing it
-    print create2dDict(3,2)
+    print(create2dDict(3,2))
