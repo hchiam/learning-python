@@ -32,25 +32,25 @@ class node(object):
         return output
 
 
-print "\ntree node Branching and Printout example"
-print "asd"
-print "asd"
+print("\ntree node Branching and Printout example")
+print("")
+print("")
 time.sleep(2)
-print "\n\"BRANCH\" = Larger number ; \"GROWTH\" = Smaller or Equal number\n"
+print("\n\"BRANCH\" = Larger number ; \"GROWTH\" = Smaller or Equal number\n")
 time.sleep(3)
 
 tree = node(1)
 
 nodesToAdd = [5,3,7,2,4,6,0,9,8]
 
-print 'nodesToAdd = ', nodesToAdd, '\n'
+print('nodesToAdd = ', nodesToAdd, '\n')
 time.sleep(1)
 
 for currNode in nodesToAdd:
     # print tree so far
-    print tree.getPrintOut(tree)
+    print(tree.getPrintOut(tree))
     # add new line for final output
-    print ""
+    print()
     # add branch to tree
     tree.branch(currNode)
     time.sleep(1)
