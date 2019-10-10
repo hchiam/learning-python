@@ -4,6 +4,8 @@ Notes from reading this article: https://treyhunner.com/2019/05/python-builtins-
 
 [Essential](https://github.com/hchiam/learning-python/blob/master/python-built-ins-worth-learning.md#essential-memorize-for-fluency) / [Specialized](https://github.com/hchiam/learning-python/blob/master/python-built-ins-worth-learning.md#specialized-know-about-to-find-them-effectively-later) / [Arcane](https://github.com/hchiam/learning-python/blob/master/python-built-ins-worth-learning.md#arcane-unlikely-to-need-but-know-they-exist-just-in-case)
 
+From these 42+27, choose 30.
+
 ## Essential: Memorize for fluency
 
 ### Commonly known
