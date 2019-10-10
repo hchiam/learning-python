@@ -6,6 +6,16 @@ Notes from reading this article: https://treyhunner.com/2019/05/python-builtins-
 
 ## Essential: Memorize for fluency
 
+#### Commonly known
+
+#### Overlooked by beginners
+
 ## Specialized: Know about to find them effectively later
 
+#### Learn it later
+
+#### Maybe learn it eventually
+
 ## Arcane: Unlikely to need, but know they exist, just in case
+
+#### "You likely don't need these" (pretty specialized)
