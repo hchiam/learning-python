@@ -27,6 +27,12 @@ sillyPrint('hi', '1', 'hello', '\n')
 # hello
 
 
+a = { 'a': 1 }
+b = { 'b': 2 }
+c = { **a, **b }
+print(c, '\n') # {'a': 1, 'b': 2}
+
+
 def tag(tag_name, **attributes): # attributes unpacks values from keys
     attribute_list = [
         f'{name}="{value}"'
