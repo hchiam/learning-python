@@ -20,3 +20,5 @@ class Example:
     def example_method(self, number):
         """example method docstring"""
         return self.number + number
+
+# A more complete example: https://github.com/hchiam/learning-python/blob/master/leetcode/climbing-stairs-problem.py
