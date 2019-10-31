@@ -17,7 +17,7 @@ pylint pylint_example.py
 
 Or even better, you can auto-run that command every time you save a file in the folder. To do that, do `pip3 install rerun` and then run this in the CLI:
 ```bash
-rerun "pylint pylint_example.py"
+rerun "pylint pylint_example.py; python3 pylint_example.py"
 ```
 
 This works just like [`nodemon` for JS/Node.js](https://github.com/hchiam/learning-js#bonus).
