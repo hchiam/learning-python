@@ -22,6 +22,12 @@ rerun "pylint pylint_example.py; python3 pylint_example.py"
 
 This works just like [`nodemon` for JS/Node.js](https://github.com/hchiam/learning-js#bonus).
 
+## Type checking
+
+I use `pyright` to do static type checking in VSCode.
+
+You can see an example of (gradual) type annotations [here](https://github.com/hchiam/learning-python/blob/master/leetcode/climbing-stairs-problem.py).
+
 ## Older Repos
 
 https://github.com/hchiam/webScraper
