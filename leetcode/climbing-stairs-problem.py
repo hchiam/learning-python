@@ -4,6 +4,8 @@ pylint pylint_example.py
 
 Or even better, pip3 install rerun and then run this in the CLI:
 rerun "pylint pylint_example.py; python3 pylint_example.py"
+
+I use pyright to do static type checking in VSCode
 """
 
 # pylint: disable = too-few-public-methods, invalid-name
@@ -20,7 +22,7 @@ class Solution_Number_Pattern_DO_NOT_USE: # really slow (the other solution is b
     def __init__(self):
         self.list = set('1')
 
-    def climbStairs(self, number):
+    def climbStairs(self, number: int) -> int:
         """get answer"""
         if number == 1:
             return 1
@@ -31,7 +33,7 @@ class Solution_Number_Pattern_DO_NOT_USE: # really slow (the other solution is b
         options_count = len(self.list)
         return options_count
 
-    def get_next_level(self):
+    def get_next_level(self) -> set:
         """get next level up by replacing self.list with new list"""
         new_list = set()
         for i in self.list:
@@ -55,7 +57,7 @@ class Solution_previous_2_steps: # faster solution
     def __init__(self):
         self.memo = {0:0, 1:1, 2:2}
 
-    def climbStairs(self, number):
+    def climbStairs(self, number: int) -> int:
         """get answer"""
         if number in self.memo:
             return self.memo[number]
@@ -64,7 +66,7 @@ class Solution_previous_2_steps: # faster solution
         return self.memo[number]
 
 
-def solution_with_fibonacci_formula(number): # even faster solution
+def solution_with_fibonacci_formula(number: int) -> int: # even faster solution
     """Solution using Fibonacci formula"""
     sqrt5 = sqrt(5)
     answer = (pow((1 + sqrt5)/2, number + 1) - pow((1 - sqrt5)/2, number + 1)) / sqrt5
