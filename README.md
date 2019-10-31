@@ -20,6 +20,8 @@ Or even better, you can auto-run that command every time you save a file in the 
 rerun "pylint pylint_example.py"
 ```
 
+This works just like [`nodemon` for JS/Node.js](https://github.com/hchiam/learning-js#bonus).
+
 ## Older Repos
 
 https://github.com/hchiam/webScraper
