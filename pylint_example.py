@@ -3,7 +3,7 @@ To run python linter pylint on this file, run this in the CLI:
 pylint pylint_example.py
 
 Or even better, pip3 install rerun and then run this in the CLI:
-rerun "pylint pylint_example.py"
+rerun "pylint pylint_example.py; python3 pylint_example.py"
 """
 
 # pylint: disable = too-few-public-methods
