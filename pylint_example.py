@@ -3,7 +3,7 @@ To run python linter pylint on this file, run this in the CLI:
 pylint pylint_example.py
 """
 
-# pylint: disable=too-few-public-methods
+# pylint: disable = too-few-public-methods
 
 # learn unit testing in python later: https://www.youtube.com/watch?v=6baJ5t83820
 
