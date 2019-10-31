@@ -10,6 +10,8 @@ rerun "pylint pylint_example.py; python3 pylint_example.py"
 
 # learn unit testing in python later: https://www.youtube.com/watch?v=6baJ5t83820
 
+from math import sqrt
+
 class Solution_Number_Pattern_DO_NOT_USE: # really slow (the other solution is better)
     """
     Solution using number pattern for:
@@ -54,7 +56,7 @@ class Solution_previous_2_steps: # faster solution
         self.memo = {0:0, 1:1, 2:2}
 
     def climbStairs(self, number):
-        """example method docstring"""
+        """get answer"""
         if number in self.memo:
             return self.memo[number]
         # otherwise
@@ -62,20 +64,34 @@ class Solution_previous_2_steps: # faster solution
         return self.memo[number]
 
 
+def solution_with_fibonacci_formula(number): # even faster solution
+    """Solution using Fibonacci formula"""
+    sqrt5 = sqrt(5)
+    answer = (pow((1 + sqrt5)/2, number + 1) - pow((1 - sqrt5)/2, number + 1)) / sqrt5
+    answer = round(answer)
+    return answer
+
+
 s1 = Solution_Number_Pattern_DO_NOT_USE()
 s2 = Solution_previous_2_steps()
+s3 = solution_with_fibonacci_formula
 print(1)
 print('method 1 works: ', s1.climbStairs(1) == 1)
 print('method 2 works: ', s2.climbStairs(1) == 1)
+print('method 3 works: ', s3(1) == 1)
 print(2)
 print('method 1 works: ', s1.climbStairs(2) == 2)
 print('method 2 works: ', s2.climbStairs(2) == 2)
+print('method 3 works: ', s3(2) == 2)
 print(3)
 print('method 1 works: ', s1.climbStairs(3) == 3)
 print('method 2 works: ', s2.climbStairs(3) == 3)
+print('method 3 works: ', s3(3) == 3)
 print(4)
 print('method 1 works: ', s1.climbStairs(4) == 5)
 print('method 2 works: ', s2.climbStairs(4) == 5)
+print('method 3 works: ', s3(4) == 5)
 print(5)
 print('method 1 works: ', s1.climbStairs(5) == 8)
 print('method 2 works: ', s2.climbStairs(5) == 8)
+print('method 3 works: ', s3(5) == 8)
