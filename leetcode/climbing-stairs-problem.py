@@ -77,23 +77,43 @@ def solution_with_fibonacci_formula(number: int) -> int: # even faster solution
 s1 = Solution_Number_Pattern_DO_NOT_USE()
 s2 = Solution_previous_2_steps()
 s3 = solution_with_fibonacci_formula
+
 print(1)
+assert s1.climbStairs(1) == 1
+assert s2.climbStairs(1) == 1
+assert s3(1) == 1
 print('method 1 works: ', s1.climbStairs(1) == 1)
 print('method 2 works: ', s2.climbStairs(1) == 1)
 print('method 3 works: ', s3(1) == 1)
+
 print(2)
+assert s1.climbStairs(2) == 2
+assert s2.climbStairs(2) == 2
+assert s3(2) == 2
 print('method 1 works: ', s1.climbStairs(2) == 2)
 print('method 2 works: ', s2.climbStairs(2) == 2)
 print('method 3 works: ', s3(2) == 2)
+
 print(3)
+assert s1.climbStairs(3) == 3
+assert s2.climbStairs(3) == 3
+assert s3(3) == 3
 print('method 1 works: ', s1.climbStairs(3) == 3)
 print('method 2 works: ', s2.climbStairs(3) == 3)
 print('method 3 works: ', s3(3) == 3)
+
 print(4)
+assert s1.climbStairs(4) == 5
+assert s2.climbStairs(4) == 5
+assert s3(4) == 5
 print('method 1 works: ', s1.climbStairs(4) == 5)
 print('method 2 works: ', s2.climbStairs(4) == 5)
 print('method 3 works: ', s3(4) == 5)
+
 print(5)
+assert s1.climbStairs(5) == 8
+assert s2.climbStairs(5) == 8
+assert s3(5) == 8
 print('method 1 works: ', s1.climbStairs(5) == 8)
 print('method 2 works: ', s2.climbStairs(5) == 8)
 print('method 3 works: ', s3(5) == 8)
