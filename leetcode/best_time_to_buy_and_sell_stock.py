@@ -1,6 +1,8 @@
 """
 Note to self:
 rerun "pylint best_time_to_buy_and_sell_stock.py; python3 best_time_to_buy_and_sell_stock.py"
+
+I use pyright to do static type checking in VSCode
 """
 
 # pylint: disable=invalid-name, too-few-public-methods, no-self-use
