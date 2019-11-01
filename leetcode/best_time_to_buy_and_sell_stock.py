@@ -6,10 +6,12 @@ I use pyright to do static type checking in VSCode
 """
 
 # pylint: disable=invalid-name, too-few-public-methods, no-self-use
+from typing import List # so you can do List[int]
 
 class Solution:
     """solution for 'Best Time to Buy and Sell Stock' on leetcode"""
-    def maxProfit(self, prices: list) -> int:
+
+    def maxProfit(self, prices: List[int]) -> int:
         """max profit"""
         profit = 0
         min_price = None
