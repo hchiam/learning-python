@@ -1,4 +1,6 @@
 """
+Example module docstring
+
 To run python linter pylint on this file, run this in the CLI:
 pylint pylint_example.py
 
@@ -21,4 +23,5 @@ class Example:
         """example method docstring"""
         return self.number + number
 
-# A more complete example: https://github.com/hchiam/learning-python/blob/master/leetcode/climbing-stairs-problem.py
+# A more complete example:
+# https://github.com/hchiam/learning-python/blob/master/leetcode/climbing-stairs-problem.py
