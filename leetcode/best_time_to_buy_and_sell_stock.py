@@ -28,6 +28,7 @@ if __name__ == "__main__":
     def check_answer(numbers, correct):
         """helper function"""
         answer = Solution().maxProfit(numbers)
+        assert answer == correct, f'{answer} should be {correct}'
         print(answer, 'ok' if answer == correct else 'error')
     check_answer(numbers=[7, 1, 5, 3, 6, 4], correct=5)
     check_answer(numbers=[7, 6, 4, 3, 1], correct=0)
