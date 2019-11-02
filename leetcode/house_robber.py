@@ -5,7 +5,7 @@ rerun "pylint house_robber.py; python3 house_robber.py"
 I use pyright to do static type checking in VSCode
 """
 
-# pylint: disable=invalid-name, too-few-public-methods, no-self-use
+# pylint: disable = too-few-public-methods, no-self-use
 from typing import List # so you can do List[int]
 
 # https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.
@@ -13,7 +13,7 @@ from typing import List # so you can do List[int]
 # 1) recursive
 # 2) recursive memo
 # 3) iterative memo
-# 4) iterative N variables
+# 4) iterative pointers
 
 class Solution:
     """solution for 'House Robber' on leetcode"""
@@ -33,7 +33,8 @@ class Solution:
         if len(houses) == 2:
             return max(houses[0], houses[1])
         # return self.rob_recursively(houses, 0)
-        return self.rob_iteratively(houses)
+        # return self.rob_iteratively(houses)
+        return self.rob_iteratively_with_variables(houses)
 
     def rob_recursively(self, houses: List[int], i: int) -> int:
         """
@@ -55,20 +56,41 @@ class Solution:
 
     def rob_iteratively(self, houses: List[int]) -> int:
         """
-        iterative solution: loot up to the NEXT house =
+        Iterative solution: loot up to the NEXT house =
         either (1) loot from this house,
-        or (2) loot 
+        or (2) loot.
         """
         self.memo[0] = houses[0]
         # loop starting at the 2nd house:
         for i in range(1, len(houses)):
-            if i - 2 < 0: # as if only getting 2nd house
+            if i - 2 < 0: # as if only getting 2nd house (otherwise invalid index)
                 loot_this_house_and_2_ago = houses[i]
             else: # otherwise i - 2 is a valid index
                 loot_this_house_and_2_ago = houses[i] + self.memo[i - 2]
             loot_previous_house = self.memo[i - 1]
             self.memo[i] = max(loot_this_house_and_2_ago, loot_previous_house)
         return self.memo[len(houses) - 1]
+
+    def rob_iteratively_with_variables(self, houses: List[int]) -> int:
+        """
+        iterative solution that uses variables:
+        improve on the iterative memo solution by noticing
+        self.memo[i - 2] = houses[i - 2]
+        self.memo[i - 1] = houses[i - 1]
+        so
+        loot_this_house_and_2_ago = this house + two ago
+        loot_previous_house = one ago
+        """
+        p_2 = 0 # pointer 2 ago
+        p_1 = 0 # pointer 1 ago
+        for current in houses:
+            # update to next position:
+            # p_2: just moves one to the right
+            # p_1: current house = either previous house, or this house + two ago
+            loot_this_house_and_2_ago = current + p_2
+            loot_previous_house = p_1
+            p_2, p_1 = p_1, max(loot_previous_house, loot_this_house_and_2_ago)
+        return p_1 # = current house = either previous house, or this house + two ago
 
 if __name__ == "__main__":
     def check_answer(houses, correct):
