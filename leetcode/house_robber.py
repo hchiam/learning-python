@@ -13,7 +13,7 @@ from typing import List # so you can do List[int]
 # 1) recursive
 # 2) recursive memo
 # 3) iterative memo
-# 4) iterative pointers
+# 4) iterative "pointer" variables
 
 class Solution:
     """solution for 'House Robber' on leetcode"""
@@ -26,15 +26,16 @@ class Solution:
         Gets the max loot from non-adjacent houses.
         Stores data in the given list of houses.
         """
+        # handle trivial cases:
         if not houses:
             return 0
         if len(houses) == 1:
             return houses[0]
         if len(houses) == 2:
             return max(houses[0], houses[1])
-        # return self.rob_recursively(houses, 0)
-        # return self.rob_iteratively(houses)
-        return self.rob_iteratively_with_variables(houses)
+        # return self.rob_recursively(houses, 0) # works
+        # return self.rob_iteratively(houses) # better
+        return self.rob_iteratively_with_variables(houses) # even better
 
     def rob_recursively(self, houses: List[int], i: int) -> int:
         """
@@ -43,6 +44,7 @@ class Solution:
         or (2) don't loot this house (and loot the next one).
         If you don't loot this house and not the next one either,
         then you're being silly and are better off with case (1) above anyways.
+        (BTW: going left to right recursively until base case i >= len.)
         """
         if i >= len(houses):
             return 0
@@ -57,8 +59,9 @@ class Solution:
     def rob_iteratively(self, houses: List[int]) -> int:
         """
         Iterative solution: loot up to the NEXT house =
-        either (1) loot from this house,
-        or (2) loot.
+        either (1) loot from this house + house 2 ago,
+        or (2) loot previous house.
+        (BTW: going left to right with O(n).)
         """
         self.memo[0] = houses[0]
         # loop starting at the 2nd house:
@@ -73,24 +76,25 @@ class Solution:
 
     def rob_iteratively_with_variables(self, houses: List[int]) -> int:
         """
-        iterative solution that uses variables:
-        improve on the iterative memo solution by noticing
-        self.memo[i - 2] = houses[i - 2]
-        self.memo[i - 1] = houses[i - 1]
-        so
-        loot_this_house_and_2_ago = this house + two ago
-        loot_previous_house = one ago
+        (Iterative solution that uses "pointer" variables instead of memo.)
+        Improve on the iterative memo solution by noticing:
+            self.memo[i - 2] = houses[i - 2]
+            self.memo[i - 1] = houses[i - 1]
+        so:
+            loot_this_house_and_2_ago = this house + two ago
+            loot_previous_house = one ago
+        (BTW: going left to right with O(n).)
         """
-        p_2 = 0 # pointer 2 ago
-        p_1 = 0 # pointer 1 ago
-        for current in houses:
-            # update to next position:
-            # p_2: just moves one to the right
-            # p_1: current house = either previous house, or this house + two ago
-            loot_this_house_and_2_ago = current + p_2
-            loot_previous_house = p_1
-            p_2, p_1 = p_1, max(loot_previous_house, loot_this_house_and_2_ago)
-        return p_1 # = current house = either previous house, or this house + two ago
+        prev = 0
+        curr = 0
+        for house in houses:
+            # curr: current house = either previous house, or this house + two ago
+            # prev: just moves one to the next position
+            loot_this_house_and_2_ago = house + prev
+            loot_previous_house = curr
+            curr = max(loot_previous_house, loot_this_house_and_2_ago)
+            prev = loot_previous_house
+        return curr # = current house = either previous house, or this house + two ago
 
 if __name__ == "__main__":
     def check_answer(houses, correct):
