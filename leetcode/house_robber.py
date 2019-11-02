@@ -8,43 +8,35 @@ I use pyright to do static type checking in VSCode
 # pylint: disable=invalid-name, too-few-public-methods, no-self-use
 from typing import List # so you can do List[int]
 
-# This solution is a rework of:
-# https://leetcode.com/problems/house-robber/discuss/416524/Python-O(n)-iterative-with-explanation
+# helpful reading: https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.
+
 class Solution:
     """solution for 'House Robber' on leetcode"""
 
-    def rob(self, numbers: List[int]) -> int:
+    def __init__(self):
+        self.memo = {}
+
+    def rob(self, houses: List[int]) -> int:
         """
         Gets the max loot from non-adjacent houses.
         Stores data in the given list of houses.
         """
-
-        if not numbers: # empty or invalid input
+        if not houses:
             return 0
+        return self.rob_recursively(houses, 0)
 
-        houses = list(numbers) # edit a copy instead of the original
-
-        # handle trivial cases:
-        if len(houses) == 1:
-            return houses[0]
-        if len(houses) == 2:
-            return max(houses[0], houses[1])
-
-        """
-        Intuition: To maximize loot, you can only have gaps of 1 or 2.
-        You can run in O(n) time instead of O(2^n) time if you track
-        running totals inside the array itself.
-        """
-        max_3_back = houses[0]
-        for i in range(2, len(houses)):
-            if houses[i-2] > max_3_back:
-                houses[i] += houses[i-2]
-                # in the next step, this will be the value 3 back:
-                max_3_back = houses[i-2]
-            else:
-                houses[i] += max_3_back
-
-        return max(houses[-1], houses[-2])
+    def rob_recursively(self, numbers: List[int], i: int) -> int:
+        if i >= len(numbers):
+            return 0
+        if i in self.memo:
+            return self.memo[i]
+        loot_this_house = numbers[i]
+        loot_next_house = self.rob_recursively(numbers, i + 1)
+        gap_of_1 = loot_this_house + self.rob_recursively(numbers, i + 2)
+        gap_of_2 = loot_next_house
+        max_loot = max(gap_of_1, gap_of_2)
+        self.memo[i] = max_loot
+        return max_loot
 
 if __name__ == "__main__":
     def check_answer(numbers, correct):
@@ -74,5 +66,3 @@ if __name__ == "__main__":
         157, 79, 133, 66, 36, 165], correct=4517) # requires fast algorithm
     check_answer(numbers=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], correct=30)
     check_answer(numbers=[10, 9, 8, 7, 6, 5, 4, 3, 2, 1], correct=30)
-
-# helpful reading: https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.
