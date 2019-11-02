@@ -74,3 +74,5 @@ if __name__ == "__main__":
         157, 79, 133, 66, 36, 165], correct=4517) # requires fast algorithm
     check_answer(numbers=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], correct=30)
     check_answer(numbers=[10, 9, 8, 7, 6, 5, 4, 3, 2, 1], correct=30)
+
+# helpful reading: https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.
