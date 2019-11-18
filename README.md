@@ -28,6 +28,16 @@ I use `pyright` to do static type checking in VSCode.
 
 You can see an example of (gradual) type annotations [here](https://github.com/hchiam/learning-python/blob/master/leetcode/climbing-stairs-problem.py).
 
+## Maintainability Index (MI score)
+
+The MI combines lines of code, cyclomatic complexity, and the Halstead volume metric (i.e. number of variables, operations, decision paths, and lines of code). After you `pip install radon`, you can get the MI score of your code:
+
+```bash
+radon mi your_code.py -s
+```
+
+More tools for things like refactoring code (`rope`) and tracking project code complexity (`wily`): <https://realpython.com/python-refactoring/>
+
 ## Older Repos
 
 https://github.com/hchiam/webScraper
