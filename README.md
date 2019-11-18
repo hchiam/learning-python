@@ -36,6 +36,8 @@ The MI combines lines of code, cyclomatic complexity, and the Halstead volume me
 radon mi your_code.py -s
 ```
 
+Similar to how I use [`plato`](https://github.com/hchiam/learning-js/blob/master/README.md#get-code-maintainability-index-mi-score) for JavaScript code.
+
 More tools for things like refactoring code (`rope`) and tracking project code complexity (`wily`): <https://realpython.com/python-refactoring/>
 
 ## Older Repos
