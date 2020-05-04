@@ -4,6 +4,8 @@ Miscellaneous practice code in Python and things I've used.
 
 Just one of the things I'm learning. https://github.com/hchiam/learning
 
+You can create share-able online live demos with [trinket.io](https://trinket.io) (similar to [CodePen](https://codepen.io/pen/) for JS/HTML/CSS).
+
 ## Notes on Python built-ins worth knowing
 
 https://github.com/hchiam/learning-python/blob/master/python-built-ins-worth-learning.md
