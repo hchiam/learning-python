@@ -42,14 +42,16 @@ Similar to how I use [`plato`](https://github.com/hchiam/learning-js/blob/master
 
 More tools for things like refactoring code (`rope`) and tracking project code complexity (`wily`): <https://realpython.com/python-refactoring/>
 
-## Older Repos
+## Other Repos
 
-https://github.com/hchiam/webScraper
-
-https://github.com/hchiam/autotest
-
-https://github.com/hchiam/audioMonitorQt
-
-## Random
-
-NLP with spaCy and textacy: https://github.com/hchiam/nlp_spacy_textacy
+- https://github.com/hchiam/webScraper
+- Maching Learning: https://github.com/hchiam/machineLearning
+- NLP with spaCy and textacy: https://github.com/hchiam/nlp_spacy_textacy
+- One of my experimental programming languages: https://github.com/hchiam/please (for coding by voice)
+- Flask: https://github.com/hchiam/learning-flask
+- A genetic algorithm: https://github.com/hchiam/cogLang-geneticAlgo
+- https://github.com/hchiam/cognateLanguage
+- Code and notes based on Udacity course AI for Robotics: https://github.com/hchiam/ai_for_robotics
+- Cirq for quantum computer circuits: https://github.com/hchiam/learning-cirq
+- https://github.com/hchiam/autotest
+- https://github.com/hchiam/audioMonitorQt
