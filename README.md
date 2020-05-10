@@ -49,3 +49,7 @@ https://github.com/hchiam/webScraper
 https://github.com/hchiam/autotest
 
 https://github.com/hchiam/audioMonitorQt
+
+## Random
+
+NLP with spaCy and textacy: https://github.com/hchiam/nlp_spacy_textacy
