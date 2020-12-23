@@ -19,7 +19,7 @@ port = 8000
 address = (host, port)
 client_socket.connect(address)
 
-buffer_size = 1024  # max data size we're allowing to transmit via TCP
+buffer_size = 1024  # max data size we're allowing client to receive at once
 message = client_socket.recv(buffer_size)
 
 client_socket.close()
