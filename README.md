@@ -55,4 +55,4 @@ More tools for things like refactoring code (`rope`) and tracking project code c
 - Cirq for quantum computer circuits: https://github.com/hchiam/learning-cirq
 - https://github.com/hchiam/autotest
 - https://github.com/hchiam/audioMonitorQt
-- https://github.com/hchiam/learning-lzw
+- LZW compression algorithm https://github.com/hchiam/learning-lzw
