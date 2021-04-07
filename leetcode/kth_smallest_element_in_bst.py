@@ -42,6 +42,11 @@ class Solution:
 
         stack = []
 
+        """
+        intuition:
+        traversing left-down on the tree = getting to (sub)tree min
+        traversing right-down on the tree = increasing index (in array POV)
+        """
         while True:
             if root:
                 # breadcrumbs along path to min:
