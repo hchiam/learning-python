@@ -44,8 +44,15 @@ class Solution:
 
         """
         intuition:
-        traversing left-down on the tree = getting to (sub)tree min
-        traversing right-down on the tree = increasing index (in array POV)
+        traversing left-down from a node = getting to (sub)tree min
+        traversing right-down from a node = count that node (in array POV)
+        example: 4    [4], root = 1, k = 2
+                /
+               1      [4,1], root = None
+                \     [4], root = 1, k = 1, root = 3
+                 3    [4,3], root = 2
+                /     [4,3,2], root = None
+               2      [4,3], root = 2, k = 0
         """
         while True:
             if root:
