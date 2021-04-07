@@ -26,6 +26,17 @@ class Solution:
 
         return answer
 
+    def kthSmallest_concise(self, root: TreeNode, k: int) -> int:
+
+        def iot(n: TreeNode) -> [int]:
+            left = iot(n.left) if n and n.left else []
+            mid = [n.val] if n else []
+            right = iot(n.right) if n and n.right else []
+            return left + mid + right
+
+        output = iot(root)
+        return output[k-1] if k > 0 and k-1 < len(output) else None
+
 
 n = TreeNode(5)
 n.left = TreeNode(1)
@@ -35,7 +46,8 @@ n.left.right.right = TreeNode(4)
 n.right = TreeNode(6)
 
 answer = Solution()
-output = answer.kthSmallest
+# output = answer.kthSmallest
+output = answer.kthSmallest_concise
 
 print('✅' if output(n, 1) == 1 else '❌')
 print('✅' if output(n, 2) == 2 else '❌')
