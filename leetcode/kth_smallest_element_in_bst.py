@@ -38,21 +38,26 @@ class Solution:
         return output[k-1] if k > 0 and k-1 < len(output) else None
 
     def kthSmallest_faster(self, root: TreeNode, k: int) -> int:
-
-        if not root or not root.val:
-            return None
+        # replace the recursion with a stack
 
         stack = []
 
         while True:
-            while root:
+            if root:
+                # breadcrumbs along path to min:
                 stack.append(root)
+                # get left-most node = (sub)tree min:
                 root = root.left
-            root = stack.pop() if stack else None
-            k -= 1
-            if not k:
-                return root.val if root else None
-            root = root.right if root else None
+            elif stack:
+                root = stack.pop()
+                k -= 1  # count down to 0 = found
+                if k == 0:
+                    return root.val
+                # check for any right nodes:
+                root = root.right
+            else:
+                # handle empty root and empty stack:
+                break
 
 
 n = TreeNode(5)
