@@ -37,6 +37,23 @@ class Solution:
         output = iot(root)
         return output[k-1] if k > 0 and k-1 < len(output) else None
 
+    def kthSmallest_faster(self, root: TreeNode, k: int) -> int:
+
+        if not root or not root.val:
+            return None
+
+        stack = []
+
+        while True:
+            while root:
+                stack.append(root)
+                root = root.left
+            root = stack.pop() if stack else None
+            k -= 1
+            if not k:
+                return root.val if root else None
+            root = root.right if root else None
+
 
 n = TreeNode(5)
 n.left = TreeNode(1)
@@ -47,7 +64,8 @@ n.right = TreeNode(6)
 
 answer = Solution()
 # output = answer.kthSmallest
-output = answer.kthSmallest_concise
+# output = answer.kthSmallest_concise
+output = answer.kthSmallest_faster
 
 print('✅' if output(n, 1) == 1 else '❌')
 print('✅' if output(n, 2) == 2 else '❌')
