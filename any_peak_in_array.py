@@ -4,54 +4,54 @@ import math
 
 
 class Solution:
-    def findPeakElement(self, nums: [int]) -> int:
-        if not nums or len(nums) < 1:
+    def findPeakElement(self, numbers: [int]) -> int:
+        if not numbers or len(numbers) < 1:
             return -1
-        if len(nums) == 1:
+        if len(numbers) == 1:
             return 0
-        if nums[0] > nums[1]:
+        if numbers[0] > numbers[1]:
             return 0
-        if nums[-1] > nums[-2]:
-            return len(nums)-1
-        for i in range(1, len(nums)-1):
-            left = nums[i-1]
-            right = nums[i+1]
-            if nums[i] > left and nums[i] > right:
+        if numbers[-1] > numbers[-2]:
+            return len(numbers)-1
+        for i in range(1, len(numbers)-1):
+            left = numbers[i-1]
+            right = numbers[i+1]
+            if numbers[i] > left and numbers[i] > right:
                 return i
         return -1
 
-    def findPeakElement_1_liner(self, nums: [int]) -> int:
-        if len(nums) == 0:
+    def findPeakElement_1_liner(self, numbers: [int]) -> int:
+        if len(numbers) == 0:
             return -1
-        return nums.index(max(nums)) if nums and len(nums) > 0 else 0
+        return numbers.index(max(numbers)) if numbers and len(numbers) > 0 else 0
 
-    def findPeakElement_binary(self, nums: [int]) -> int:
-        if not nums or len(nums) < 1:
+    def findPeakElement_binary(self, numbers: [int]) -> int:
+        if not numbers or len(numbers) < 1:
             return -1
-        if len(nums) == 1:
+        if len(numbers) == 1:
             return 0
         left = 0
-        right = len(nums) - 1
+        right = len(numbers) - 1
         mid = math.floor((left + right)/2)
         while left < right:
             mid = math.floor((left + right)/2)
-            if nums[mid] <= nums[mid+1]:
+            if numbers[mid] <= numbers[mid+1]:
                 left = mid + 1
             else:
                 right = mid - 1
         return left
 
-    def findPeakElement_log(self, nums: [int]) -> int:
-        if not nums or len(nums) < 1:
+    def findPeakElement_log(self, numbers: [int]) -> int:
+        if not numbers or len(numbers) < 1:
             return -1
-        if len(nums) == 1:
+        if len(numbers) == 1:
             return 0
 
         i = 0
-        skip = len(nums)
+        skip = len(numbers)
 
         def ok(index):
-            return index < len(nums) and nums[index-1] <= nums[index]
+            return index < len(numbers) and numbers[index-1] <= numbers[index]
 
         while skip >= 1:
             while ok(i+skip):
