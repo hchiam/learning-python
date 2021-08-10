@@ -14,5 +14,6 @@ For example, for Python3:
 
 ```py
 a,b = [int(x) for x in input().split()]
-print(a+b)
+second_line_of_input = input()
+print(a+b, second_line_of_input)
 ```
