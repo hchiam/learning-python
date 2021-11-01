@@ -9,19 +9,27 @@
 
 def write(file_name, text):
     f = open(file_name, "w")
-    f.write(text)
+    f.write(str(text))
+    f.close()
+
+
+def append(file_name, text):
+    f = open(file_name, "a")
+    f.write(str(text))
     f.close()
 
 
 def read(file_name):
     f = open(file_name, "r")
-    print(f.read())
+    text = str(f.read())
+    f.close()
+    return text
 
 
 if __name__ == '__main__':
-    f = open("write_file_demo.txt", "w")
+    f = open("read_write_file_demo.txt", "w")
     f.write("Some content (replaces any existing).")
     f.close()
 
-    f = open("write_file_demo.txt", "r")
+    f = open("read_write_file_demo.txt", "r")
     print(f.read())

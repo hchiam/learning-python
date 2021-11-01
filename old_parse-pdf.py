@@ -1,4 +1,4 @@
-# (see the newer parse-pdf.py)
+# (see the newer parse_pdf.py)
 
 # https://automatetheboringstuff.com/chapter13
 # pip3 install PyPDF2
