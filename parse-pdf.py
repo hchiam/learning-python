@@ -1,7 +1,8 @@
 # pip3 install textract
 import textract
 text = textract.process('...pdf')
-print(text)
+new_page_character = r'\x0c'
+pages = str(text).split(new_page_character)
 
 # # https://automatetheboringstuff.com/chapter13
 # # pip3 install PyPDF2
