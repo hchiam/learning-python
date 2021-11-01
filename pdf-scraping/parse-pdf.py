@@ -4,6 +4,8 @@ import textract  # pip3 install textract
 from os import listdir
 from os.path import isfile, join
 
+from write_file import read, write
+
 
 def main():
     print('\nFor copy-paste convenience, \ndouble-click and copy:\n')
@@ -11,7 +13,8 @@ def main():
 
     file_name = file_prompt()
 
-    text = textract.process(file_name)
+    text = str(textract.process(file_name))
+    write('backup.txt', text)
     pages = split_into_PDF_pages(text)
     print(f'\nPages: {len(pages)}\n')
 
