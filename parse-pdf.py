@@ -1,27 +1,46 @@
-# pip3 install textract
-import textract
-text = textract.process('...pdf')
-new_page_character = r'\x0c'
-pages = str(text).split(new_page_character)
+import textract  # pip3 install textract
 
-# # https://automatetheboringstuff.com/chapter13
-# # pip3 install PyPDF2
-# import PyPDF2
-# import re
+from os import listdir
+from os.path import isfile, join
 
-# pdf_path = '...pdf'
-# pdf_file = open(pdf_path, 'rb')
-# read_pdf = PyPDF2.PdfFileReader(pdf_file)
-# number_of_pages = read_pdf.getNumPages()
-# page = read_pdf.getPage(1)
-# page_content = page.extractText() # .encode('utf-8')
-# attempted_keys_regex = '(\d ?\) ?To .+\n.+\n.+)'
-# attempted_MV_regex = '(".+?[#|"]?.+?\(.+?\))' # use with re.DOTALL
-# print(re.findall(attempted_keys_regex, page_content))
-# print('\n\n\n'.join(re.findall(attempted_MV_regex, page_content, re.DOTALL)))
 
-# # for page_number in range(number_of_pages):
-#   # page = read_pdf.getPage(page_number)
-#   # page_content = page.extractText().encode('utf-8')
-#   # ResSearch = re.search('verse', page_content)
-#   # print(ResSearch)
+def main():
+    print('\nFor copy-paste convenience, \ndouble-click and copy:\n')
+    show_PDFs_in_current_directory()
+
+    file_name = file_prompt()
+
+    text = textract.process(file_name)
+    pages = split_into_PDF_pages(text)
+    print(f'\nPages: {len(pages)}\n')
+
+
+def show_PDFs_in_current_directory():
+    pdf_file_names = [f for f in listdir('.') if isfile(
+        join('.', f)) and f.endswith('.pdf')]
+    print('\n'.join(pdf_file_names))
+
+
+def file_prompt():
+    file_name = ''
+    try:
+        # Python 3:
+        file_name = input('\nPDF file name?\n')
+    except:
+        # Python 2:
+        file_name = raw_input('\nPDF file name?\n')
+    return file_name
+
+
+def split_into_PDF_pages(text):
+    new_page_character = r'\x0c'
+    pages = str(text).split(new_page_character)
+    return pages
+
+
+def show_stats(text):
+    pages = split_into_PDF_pages(text)
+    print(f'\nPages: {len(pages)}\n')
+
+
+main()
