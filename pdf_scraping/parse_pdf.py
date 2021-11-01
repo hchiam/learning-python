@@ -2,8 +2,8 @@ import pdfplumber  # pip3 install pdfplumber
 
 from os import listdir
 from os.path import isfile, join
-import re
 
+from get_pattern_match import *
 from read_write_file import write, append, read
 
 
@@ -17,12 +17,20 @@ def main():
 
     write('backup.txt', '\n'.join(page_texts))
     txt_string = read('backup.txt')
+
     lines = txt_string.split('\n')
 
     hst_lines = []
     rebate_lines = []
     total_lines = []
+    month = ''
     for index, line in enumerate(lines):
+        month = get_month(lines, index, line)
+        if month:
+            hst_lines.append(month)
+            rebate_lines.append(month)
+            total_lines.append(month)
+
         hst_util = 'HST on Gas '
         hst_hydro = 'Harmonized Sales Tax on $'
         hst_hydro_new = 'HST ('
@@ -48,7 +56,7 @@ def main():
         total_hydro_new = 'What Do I Owe?'  # always line above
         if total_hydro in line or total_hydro_new in line:
             # total, including HST
-            next_line = lines[index+1]
+            next_line = lines[index + 1]
             total_lines.append(get_total_for_hydro_new(next_line))
 
     write('_hst.txt', '\n'.join(hst_lines))
@@ -93,11 +101,6 @@ def print_rows_in_table(table):
     return table
 
 
-def get_pattern_match(regex_string, text):
-    pattern = re.compile(regex_string)
-    return pattern.findall(text)[0]
-
-
 def get_number_at_end_of_line(line):
     return get_pattern_match(' ?(\d*\.\d*)$', line)
 
@@ -109,6 +112,15 @@ def get_credit_at_end_of_line(line):
 def get_total_for_hydro_new(line):
     return get_pattern_match('\$(\d*\.\d*)($| )', line)[0]
     # e.g. extra [0] to look into [('67.53', '')]
+
+
+def get_month(lines, index, line):
+    month = ''
+    if 'PRE-AUTHORIZED PAYMENT WITHDRAWAL' in line:
+        month = line
+    if 'withdrawn directly from your bank account on' in line:
+        month = lines[index + 1]
+    return month
 
 
 main()
