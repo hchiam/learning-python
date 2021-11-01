@@ -1,3 +1,4 @@
+# tabula might be useful in general: https://towardsdatascience.com/scraping-table-data-from-pdf-files-using-a-single-line-in-python-8607880c750?gi=bcc48106d7f9
 import textract  # pip3 install textract
 
 from os import listdir
