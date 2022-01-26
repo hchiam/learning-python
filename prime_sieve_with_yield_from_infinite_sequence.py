@@ -5,13 +5,14 @@ def naturals(n):
     yield from naturals(n+1)
 
 
-def sieve(s):
-    n = next(s)
+def sieve(iterable):
+    n = next(iterable)
     yield n
-    yield from sieve(i for i in s if i % n != 0)
+    yield from sieve(i for i in iterable if i % n != 0)
 
 
-primes = sieve(naturals(2))
+first_prime = 2
+primes = sieve(naturals(first_prime))
 
 print(next(primes))  # 2
 print(next(primes))  # 3
