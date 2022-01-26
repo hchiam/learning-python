@@ -13,9 +13,9 @@ def sieve(s):
 
 primes = sieve(naturals(2))
 
-next(primes)  # 2
-next(primes)  # 3
-next(primes)  # 5
-next(primes)  # 7
-next(primes)  # 11
+print(next(primes))  # 2
+print(next(primes))  # 3
+print(next(primes))  # 5
+print(next(primes))  # 7
+print(next(primes))  # 11
 # ...
