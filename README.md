@@ -42,6 +42,13 @@ Similar to how I use [`plato`](https://github.com/hchiam/learning-js/blob/master
 
 More tools for things like refactoring code (`rope`) and tracking project code complexity (`wily`): <https://realpython.com/python-refactoring/>
 
+## [`Segmentation fault: 11` when running `matplotlib`](https://stackoverflow.com/a/64841196)
+
+```sh
+pip uninstall matplotlib
+pip install matplotlib
+```
+
 ## Other Repos
 
 - https://github.com/hchiam/webScraper
