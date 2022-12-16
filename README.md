@@ -53,6 +53,7 @@ pip install matplotlib
 
 ## Other Repos
 
+- https://github.com/hchiam/hchiam-example-pypi-project
 - https://github.com/hchiam/webScraper
 - Maching Learning: https://github.com/hchiam/machineLearning
 - NLP with spaCy and textacy: https://github.com/hchiam/nlp_spacy_textacy
