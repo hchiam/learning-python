@@ -51,6 +51,20 @@ pip uninstall matplotlib
 pip install matplotlib
 ```
 
+## More random notes
+
+pretty print `pprint`: https://www.geeksforgeeks.org/pprint-data-pretty-printer-python/
+
+`all([True, False])`: https://www.w3schools.com/python/ref_func_all.asp
+
+`any([True, False])`: https://www.w3schools.com/python/ref_func_any.asp
+
+`from __future__ import newkeywordthing`: https://stackoverflow.com/questions/7075082/what-is-future-in-python-used-for-and-how-when-to-use-it-and-how-it-works
+
+`import inspect`: https://stackoverflow.com/questions/3711184/how-to-use-inspect-to-get-the-callers-info-from-callee-in-python
+
+`print(wikipedia.summary('web query'))`: https://pypi.org/project/wikipedia/ (see example for other params & methods)
+
 ## Other Repos
 
 - https://github.com/hchiam/hchiam-example-pypi-project
