@@ -66,6 +66,8 @@ pretty print `pprint`: https://www.geeksforgeeks.org/pprint-data-pretty-printer-
 `print(wikipedia.summary('web query'))`: https://pypi.org/project/wikipedia/ (see example for other params & methods)
 
 `brew install python` to upgrade python to the latest version https://stackoverflow.com/questions/74214615/how-to-update-python-version-in-terminal
+- `brew link --overwrite python@3.12`
+- `alias py='python3.12'` in .bash_profile (`alias bas='source ~/.bash_profile'`) so `py --version` outputs something like `Python 3.12.2`
 
 ## Other Repos
 
