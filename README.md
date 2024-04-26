@@ -69,6 +69,8 @@ pretty print `pprint`: https://www.geeksforgeeks.org/pprint-data-pretty-printer-
 - `brew link --overwrite python@3.12`
 - `alias py='python3.12'` in .bash_profile (`alias bas='source ~/.bash_profile'`) so `py --version` outputs something like `Python 3.12.2`
 
+`python3 -m http.server 8000` to quickly set up a basic local server that serves index.html at http://localhost:8000/
+
 ## Other Repos
 
 - https://github.com/hchiam/hchiam-example-pypi-project
